@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">Article Form</h1>
+      <p class="center">This is the Form for new articles</p>
+      <form action="/articles" method="post">
+        <input
+          class="input-field"
+          type="text"
+          name="title"
+          placeholder="Enter Your Title"
+        />
+        <textarea
+          name="description"
+          class="input-field"
+          rows="4"
+          placeholder="Enter Your Description"
+        ></textarea>
+        <input
+          class="input-field"
+          type="text"
+          name="tags"
+          placeholder="Enter Your Tags"
+        />
+        <input
+          class="input-field"
+          type="text"
+          name="author"
+          placeholder="Enter Your Author"
+        />
+        <input class="submit" type="submit" value="Add Article" />
+      </form>
+    </div>
+    <footer>
+      <small>&copy; Copyright 2022 Sarang Kulkarni.All Rights Reserved</small>
+    </footer>
+  </body>
+</html>
