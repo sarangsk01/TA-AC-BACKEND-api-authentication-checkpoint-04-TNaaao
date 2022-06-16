@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="flex details">
+      <h3 class="center">Article details page</h3>
+      <h4 class="name"><%= article.title%></h4>
+      <h4 class="age"><%= article.author %></h4>
+      <% article.tags.forEach(t => { %>
+      <span><%= t %></span>
+      <% }) %>
+      <h4 class="email"><%= article.description %></h4>
+      <h4><%= article.likes ? article.likes : 0 %></h4>
+      <a class="update" href="/articles/<%= article.id %>/likes"> Likes </a>
+      <a class="update" href="/articles/<%= article.id %>/edit"> edit </a>
+      <a class="delete" href="/articles/<%= article.id %>/delete"> delete </a>
+      <a class="update" href="/articles"> back </a>
+
+      <div>
+        <form action="/articles/<%= article.id %>/comments" method="post">
+          <textarea
+            name="content"
+            rows="3"
+            placeholder="Add Comment"
+          ></textarea>
+          <input type="text" name="author" placeholder="Author" />
+          <input type="submit" value="Add Comment" />
+        </form>
+      </div>
+      <div>
+        <h2>Comments</h2>
+        <hr />
+        <% article.comments.forEach(comment => { %>
+        <div>
+          <p><%= comment.content %></p>
+          <p><%= comment.author %></p>
+          <a class="update" href="/comments/<%= comment.id %>/edit">edit</a>
+          <a class="delete" href="/comments/<%= comment.id %>/delete">delete</a>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container margin height">
+      <h1 class="center">Update Article Form</h1>
+      <p class="center">Please Update the fields in Form</p>
+      <form action="/articles/<%= article.id %>" method="post">
+        <input
+          class="input-field"
+          type="text"
+          name="title"
+          placeholder="Enter Your Title"
+          value="<%= article.title %>"
+        />
+        <textarea
+          name="description"
+          class="input-field"
+          rows="4"
+          placeholder="Enter Your Description"
+        ></textarea>
+
+        <input
+          class="input-field"
+          type="text"
+          name="tags"
+          placeholder="Enter Your Tags"
+          value="<%= article.tags %>"
+        />
+        <input
+          class="input-field"
+          type="text"
+          name="author"
+          placeholder="Enter Your Author"
+          value="<%= article.author %>"
+        />
+        <input class="submit Update1" type="submit" value="Update User" />
+      </form>
+      <a href="/articles/<%= article.id %>/delete">
+        <input class="submit Update2" type="submit" value="Delete User" />
+      </a>
+      <div class="">
+        <a class="back" href="/articles"> back </a>
+        <a class="home" href="/"> Home </a>
+      </div>
+    </div>
+  </body>
+</html>
