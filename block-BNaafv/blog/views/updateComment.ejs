@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="center">Comment Form</h1>
+      <p class="center">This is the Form for new comment</p>
+      <form action="/comments/<%= comment.id %>" method="post">
+        <textarea
+          name="content"
+          class="input-field"
+          rows="4"
+          placeholder="Update Comment..."
+        >
+<%= comment.content %></textarea
+        >
+        <input class="submit" type="submit" value="Update Comment" />
+      </form>
+    </div>
+    <footer>
+      <small>&copy; Copyright 2022 Sarang Kulkarni.All Rights Reserved</small>
+    </footer>
+  </body>
+</html>
